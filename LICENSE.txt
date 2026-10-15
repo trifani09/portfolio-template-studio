@@ -1,0 +1,27 @@
+FRAME & FORM TEMPLATE COLLECTION — LICENSE PLACEHOLDER
+
+Copyright (c) 2026 [SELLER NAME]
+
+IMPORTANT: This file is a placeholder, not final commercial license terms.
+Before selling or distributing this product, the seller must replace this text
+with a reviewed license that defines, at minimum:
+
+- whether use is personal, commercial, or both;
+- the number of end products or client projects permitted;
+- whether buyers may modify the source;
+- restrictions on resale, redistribution, sublicensing, and template extraction;
+- rules for use in client work;
+- support, update, refund, and warranty terms;
+- third-party dependency and asset obligations;
+- applicable governing law.
+
+Until final terms are inserted, no rights are granted to copy, redistribute,
+resell, sublicense, or commercially exploit this template collection beyond
+rights already granted by the licenses of its third-party dependencies.
+
+THIRD-PARTY SOFTWARE
+
+Lucide icons are licensed under the ISC License. Next.js, React, Tailwind CSS,
+TypeScript, ESLint, and related packages remain subject to their respective
+licenses. Original SVG artwork in public/images and public/mark.svg is included
+with this project and should be covered explicitly by the seller's final terms.
