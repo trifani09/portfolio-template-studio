@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { forma as f } from "@/data/forma";
+import { MotionController } from "@/components/shared/MotionController";
 
 export function FormaPage() {
   return (
-    <main className="forma">
+    <main className="forma" data-motion-root="forma">
+      <MotionController theme="forma" />
       <nav className="forma-nav">
         <Link href="/templates/forma" className="forma-logo">
           AV<span>®</span>

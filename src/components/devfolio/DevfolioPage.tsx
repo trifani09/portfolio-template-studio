@@ -3,10 +3,12 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, Code2, Github, Mail, MapPin } from "lucide-react";
 import { devfolio as d } from "@/data/devfolio";
 import { ArrowLink } from "@/components/shared/ArrowLink";
+import { MotionController } from "@/components/shared/MotionController";
 
 export function DevfolioPage() {
   return (
-    <main className="devfolio">
+    <main className="devfolio" data-motion-root="devfolio">
+      <MotionController theme="devfolio" />
       <nav className="dev-nav">
         <Link href="/templates/devfolio" className="dev-logo">
           <Code2 /> MC<span>.</span>

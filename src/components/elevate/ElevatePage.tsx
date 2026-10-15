@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BarChart3, CheckCircle2, Linkedin, Quote, Sparkles } from "lucide-react";
 import { elevate as e } from "@/data/elevate";
+import { MotionController } from "@/components/shared/MotionController";
 
 export function ElevatePage() {
   return (
-    <main className="elevate">
+    <main className="elevate" data-motion-root="elevate">
+      <MotionController theme="elevate" />
       <nav className="elevate-nav">
         <Link href="/templates/elevate" className="elevate-logo">
           <span>JE</span> Jordan Ellis

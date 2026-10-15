@@ -1,0 +1,12 @@
+DEVFOLIO TEMPLATE — LICENSE PLACEHOLDER
+
+Copyright (c) 2026 [SELLER NAME]
+
+IMPORTANT: Replace this placeholder with the seller's final commercial license
+before distributing or selling this template. The final license should define
+permitted personal and commercial use, client use, modification rights,
+redistribution restrictions, support, warranties, and applicable law.
+
+Lucide icons and all software dependencies remain subject to their respective
+licenses. The original SVG artwork included with this template should be covered
+explicitly by the seller's final commercial terms.

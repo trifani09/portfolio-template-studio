@@ -307,7 +307,7 @@ img {
   opacity: 0.55;
 }
 .studio-compare {
-  background: #d8ff49;
+  background: #cbc8f1;
 }
 .studio-compare .section-heading {
   margin-bottom: 60px;
@@ -316,7 +316,7 @@ img {
   display: grid;
   grid-template-columns: 1.1fr 1fr 1.3fr 1.4fr;
   padding: 22px 0;
-  border-top: 1px solid #8ca72e;
+  border-top: 1px solid #9691c5;
   font-size: 14px;
 }
 .compare-table > div:first-child {
@@ -687,7 +687,7 @@ img {
   max-width: 580px;
 }
 .dev-about .arrow-link {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .dev-stats {
   display: grid;
@@ -725,7 +725,7 @@ img {
 .dev-contact h2 {
   font-size: clamp(48px, 7vw, 90px);
   letter-spacing: -0.05em;
-  margin: 30px 0;
+  margin: 32px 0 42px;
 }
 .dev-contact > a {
   display: inline-flex;
@@ -1018,7 +1018,7 @@ img {
     serif;
 }
 .forma-about a {
-  margin-top: 25px;
+  margin-top: 34px;
   display: inline-flex;
   gap: 10px;
   border-bottom: 1px solid;
@@ -1054,6 +1054,7 @@ img {
     clamp(55px, 8vw, 110px)/0.95 Georgia,
     serif;
   letter-spacing: -0.05em;
+  margin: 32px 0 46px;
 }
 .forma-contact a {
   display: inline-flex;
@@ -1351,12 +1352,13 @@ img {
 }
 .elevate-service-grid h3 {
   font-size: 24px;
-  margin-top: 45px;
+  margin: 45px 0 16px;
 }
 .elevate-service-grid p {
   color: #6e6e80;
   font-size: 14px;
   line-height: 1.55;
+  margin: 0 0 24px;
 }
 .elevate-service-grid svg {
   color: var(--purple);
@@ -1518,6 +1520,7 @@ img {
   font-size: 45px;
   line-height: 1.05;
   letter-spacing: -0.04em;
+  margin: 26px 0 28px;
 }
 .elevate-about > div:last-child > p:nth-of-type(2) {
   color: #676779;
@@ -1539,14 +1542,19 @@ img {
 .elevate-contact > p {
   font-size: 9px;
   letter-spacing: 0.14em;
+  margin: 0;
 }
 .elevate-contact h2 {
   font-size: clamp(50px, 7vw, 90px);
   line-height: 1;
   letter-spacing: -0.05em;
+  margin: 28px 0 0;
 }
 .elevate-contact h2 em {
   color: #d4ff70;
+}
+.elevate-contact .elevate-button {
+  margin-top: 42px;
 }
 .elevate-button.light {
   background: white;
@@ -1679,6 +1687,7 @@ img {
   }
   .dev-contact h2 {
     font-size: 51px;
+    margin-bottom: 34px;
   }
   .forma-nav {
     grid-template-columns: 1fr auto;
@@ -1756,6 +1765,9 @@ img {
   }
   .forma-contact {
     padding: 80px 20px;
+  }
+  .forma-contact h2 {
+    margin: 28px 0 36px;
   }
   .forma-footer {
     grid-template-columns: 1fr 1fr;
@@ -1837,6 +1849,12 @@ img {
   .elevate-contact {
     padding: 85px 20px;
   }
+  .elevate-contact .elevate-button {
+    margin-top: 32px;
+  }
+  .elevate-about h2 {
+    margin: 22px 0 24px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1893,13 +1911,21 @@ main {
 }
 .forma-cases article {
   transition:
-    padding 0.25s ease,
-    background 0.25s ease;
+    background-color 0.55s ease,
+    border-color 0.55s ease;
 }
 .forma-cases article:hover {
-  padding-left: 18px;
-  padding-right: 18px;
-  background: #332c26;
+  background: #2e2823;
+  border-color: #756d65;
+}
+.forma-cases article h2 {
+  transition:
+    color 0.45s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.forma-cases article:hover h2 {
+  color: #fffaf0;
+  transform: translateX(5px);
 }
 .forma-about a:hover,
 .forma-contact a:hover {
@@ -2074,5 +2100,506 @@ main {
   }
   .elevate-career article {
     grid-template-columns: 90px minmax(0, 1fr);
+  }
+}
+
+/* Motion systems */
+.motion-enabled .motion-target {
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+/* DevFolio: precise, technical movement */
+.motion-enabled .devfolio .motion-target {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-enabled .devfolio .motion-target.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.motion-enabled .dev-hero-grid > div:first-child {
+  animation: dev-hero-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.motion-enabled .dev-portrait {
+  animation: dev-panel-enter 0.9s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.motion-enabled .dev-orbit {
+  animation: dev-orbit 34s linear infinite;
+}
+.motion-enabled .dev-code-card {
+  animation: dev-card-float 7s ease-in-out infinite;
+}
+.motion-enabled .dev-availability i,
+.motion-enabled .dev-hire i {
+  animation: dev-status-pulse 2.4s ease-in-out infinite;
+}
+.dev-project .arrow-link svg,
+.dev-primary svg,
+.dev-secondary svg {
+  transition: transform 0.25s ease;
+}
+.dev-project:hover .arrow-link svg,
+.dev-primary:hover svg,
+.dev-secondary:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* Forma: editorial reveals and measured image movement */
+.motion-enabled .forma .motion-target {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.9s ease,
+    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.motion-enabled .forma .motion-target.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.motion-enabled .forma-hero h1 span:first-child {
+  animation: forma-line-left 0.9s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.motion-enabled .forma-hero h1 em {
+  animation: forma-line-right 1s 0.14s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.motion-enabled .forma-hero h1 span:last-child {
+  animation: forma-line-left 1s 0.23s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.motion-enabled .forma-work article.motion-target .forma-image {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.motion-enabled .forma-work article.motion-target.is-visible .forma-image {
+  clip-path: inset(0);
+}
+.forma-hero > div a svg,
+.forma-cases article > svg {
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.45s ease;
+}
+.forma-hero > div a:hover svg,
+.forma-cases article:hover > svg {
+  transform: translate(2px, -2px);
+  opacity: 0.72;
+}
+
+/* Elevate: calm, confident progression */
+.motion-enabled .elevate .motion-target {
+  opacity: 0;
+  transform: translateY(20px) scale(0.985);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-enabled .elevate .motion-target.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.motion-enabled .elevate-hero > div:first-child {
+  animation: elevate-copy-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.motion-enabled .elevate-visual {
+  animation: elevate-visual-enter 0.85s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.motion-enabled .elevate-float {
+  animation: elevate-float 7.5s ease-in-out infinite;
+}
+.motion-enabled .elevate-portrait::before {
+  animation: elevate-shape-breathe 10s ease-in-out infinite;
+}
+.elevate-service-grid article,
+.elevate-testimonials blockquote {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.elevate-service-grid article:hover,
+.elevate-testimonials blockquote:hover {
+  transform: translateY(-6px);
+  border-color: #c9c5ff;
+  box-shadow: 0 22px 45px #27274c14;
+}
+
+@keyframes dev-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes dev-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes dev-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dev-card-float {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes dev-status-pulse {
+  50% {
+    opacity: 0.45;
+    box-shadow: 0 0 20px var(--green);
+  }
+}
+@keyframes forma-line-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes forma-line-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes elevate-copy-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes elevate-visual-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes elevate-float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes elevate-shape-breathe {
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+/* Advanced theme-specific motion details */
+.motion-progress {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+}
+.motion-progress-devfolio,
+.motion-progress-elevate {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(var(--motion-progress, 0));
+  transform-origin: left;
+}
+.motion-progress-devfolio {
+  background: var(--green);
+  box-shadow: 0 0 10px #caff4a66;
+}
+.motion-progress-forma {
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100vh;
+  background: #231e19;
+  transform: scaleY(var(--motion-progress, 0));
+  transform-origin: top;
+}
+.motion-progress-elevate {
+  background: linear-gradient(90deg, #5c4ed8, #a69fff, #d4ff70);
+  box-shadow: 0 3px 14px #5c4ed84d;
+}
+
+.dev-portrait {
+  background-position:
+    var(--pointer-shift-x, 0) var(--pointer-shift-y, 0),
+    center;
+  transition: background-position 0.25s ease-out;
+}
+.dev-portrait::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  height: 1px;
+  top: -5%;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  box-shadow: 0 0 16px var(--green);
+  opacity: 0.28;
+  animation: dev-scan 8s 1.5s ease-in-out infinite;
+}
+.dev-project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(#caff4a10 1px, transparent 1px),
+    linear-gradient(90deg, #caff4a10 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.dev-project:hover .dev-project-image::after {
+  opacity: 1;
+}
+.dev-project h3 {
+  transition:
+    color 0.25s ease,
+    letter-spacing 0.35s ease;
+}
+.dev-project:hover h3 {
+  color: var(--green);
+  letter-spacing: -0.025em;
+}
+
+.forma-image img {
+  object-position: center calc(50% + var(--motion-drift, 0px));
+  transform: scale(1.08);
+}
+.forma-work article:hover .forma-image img {
+  transform: scale(1.12);
+}
+.forma-work h2 {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    font-style 0.2s ease;
+}
+.forma-work article:hover h2 {
+  transform: translateX(6px);
+  font-style: italic;
+}
+.forma-about-art {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.forma-about-art:hover {
+  transform: rotate(1deg) scale(0.985);
+}
+.forma-clients span {
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+.forma-clients span:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  opacity: 0.55;
+}
+
+.elevate-portrait {
+  transform: translate(var(--pointer-shift-x, 0), var(--pointer-shift-y, 0));
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.elevate-case-image img {
+  transform: scale(1.035) translate(var(--pointer-shift-x, 0), var(--pointer-shift-y, 0));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.elevate-metrics strong {
+  background: linear-gradient(100deg, #aaa1ff 20%, #ffffff 48%, #aaa1ff 76%);
+  background-size: 220% auto;
+  background-clip: text;
+  color: transparent;
+}
+.elevate-metrics article.is-visible strong {
+  animation: elevate-number-shine 1.8s 0.25s ease both;
+}
+.elevate-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.elevate-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -40%;
+  bottom: -40%;
+  left: -35%;
+  width: 24%;
+  background: #ffffff45;
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.elevate-button:hover::before {
+  left: 120%;
+}
+.elevate-service-grid article svg {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.elevate-service-grid article:hover svg {
+  transform: rotate(90deg) scale(1.05);
+}
+
+.motion-enabled .dev-nav,
+.motion-enabled .forma-nav,
+.motion-enabled .elevate-nav {
+  animation: motion-nav-enter 1s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.motion-enabled .dev-stack b {
+  animation: dev-tool-breathe 5s ease-in-out infinite;
+}
+.motion-enabled .dev-stack b:nth-child(2n) {
+  animation-delay: -1.7s;
+}
+.motion-enabled .dev-stack b:nth-child(3n) {
+  animation-delay: -3.2s;
+}
+.motion-enabled .forma-hero > div a {
+  animation: forma-arrow-drift 6s ease-in-out infinite;
+}
+.motion-enabled .forma-about-art {
+  animation: forma-art-drift 9s ease-in-out infinite;
+}
+.motion-enabled .elevate-badge {
+  animation: elevate-badge-drift 6.5s ease-in-out infinite;
+}
+.motion-enabled .elevate-service-grid article.is-visible {
+  animation: elevate-card-glow 6s ease-in-out infinite;
+}
+
+@keyframes dev-scan {
+  0%,
+  15% {
+    top: -5%;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.28;
+  }
+  75% {
+    opacity: 0.28;
+  }
+  85%,
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+@keyframes motion-nav-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes dev-tool-breathe {
+  50% {
+    color: #dce3d8;
+  }
+}
+@keyframes forma-arrow-drift {
+  50% {
+    transform: translate(3px, 3px);
+  }
+}
+@keyframes forma-art-drift {
+  0%,
+  100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-1deg) translateY(-7px);
+  }
+}
+@keyframes elevate-badge-drift {
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px #5c4ed812;
+  }
+}
+@keyframes elevate-card-glow {
+  50% {
+    border-color: #d2cff8;
+    box-shadow: 0 16px 40px #5c4ed80d;
+  }
+}
+@keyframes elevate-number-shine {
+  from {
+    background-position: 180% center;
+  }
+  to {
+    background-position: -30% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-target,
+  .motion-enabled .motion-target,
+  .motion-enabled .dev-hero-grid > div:first-child,
+  .motion-enabled .dev-portrait,
+  .motion-enabled .dev-orbit,
+  .motion-enabled .dev-code-card,
+  .motion-enabled .dev-availability i,
+  .motion-enabled .dev-hire i,
+  .motion-enabled .forma-hero h1 span,
+  .motion-enabled .forma-hero h1 em,
+  .motion-enabled .elevate-hero > div:first-child,
+  .motion-enabled .elevate-visual,
+  .motion-enabled .elevate-float,
+  .motion-enabled .elevate-portrait::before,
+  .motion-enabled .dev-nav,
+  .motion-enabled .forma-nav,
+  .motion-enabled .elevate-nav,
+  .motion-enabled .dev-stack b,
+  .motion-enabled .forma-hero > div a,
+  .motion-enabled .forma-about-art,
+  .motion-enabled .elevate-badge,
+  .motion-enabled .elevate-service-grid article,
+  .dev-portrait::after,
+  .elevate-metrics article strong {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    clip-path: none !important;
+  }
+  .motion-progress {
+    display: none;
+  }
+  .dev-portrait,
+  .forma-image img,
+  .elevate-portrait,
+  .elevate-case-image img {
+    transform: none !important;
   }
 }
